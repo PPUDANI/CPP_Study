@@ -20,7 +20,11 @@
 
 void Func2()
 {
-	XFUN2;
+	XFUN2
+
+
+
+
 
 // FUNC1 메크로로 Func1() 선언
 FUNC1
@@ -37,4 +41,3 @@ int main()
 	std::cout << "Line: " << __LINE__ << std::endl;
 	std::cout << "File: " << __FILE__ << std::endl;
 }
-
