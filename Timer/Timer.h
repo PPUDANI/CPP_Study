@@ -1,15 +1,30 @@
 #pragma once
-
-
-
+#include <chrono>
 
 class Timer
 {
-	static Timer Time_Inst;
+public:
 
-	void ExecutionTime(void(*pred)(), Args args, ...);
+    static Timer* Getinstance()
+    {
+        if (Instance == nullptr)
+        {
+            Instance = new Timer();
+        }
+        return Instance;
+    }
+
+    inline void StartTimer()
+    {
+        PrevTime = std::chrono::high_resolution_clock::now();
+    }
+
+    double TimeCheck();
+    std::chrono::high_resolution_clock::time_point PrevTime;
+
+    Timer();
+    ~Timer();
 
 private:
-	Timer() {}
+    static Timer* Instance;
 };
-

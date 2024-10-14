@@ -1,25 +1,24 @@
 #include "Timer.h"
-#include <chrono>
+#include <iostream>
 
-template <typename Func, typename... Args>
-auto measureTime(Func&& func, Args&&... args) 
+Timer* Timer::Instance = nullptr;
+
+Timer::Timer() 
 {
-    // 시작 시간을 기록
-    auto start = std::chrono::high_resolution_clock::now();
+}
 
-    // 함수 실행
-    auto result = std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
+Timer::~Timer()
+{
+    if (nullptr != Instance)
+    {
+        delete Instance;
+    }
+}
 
-    // 끝 시간을 기록
-    auto end = std::chrono::high_resolution_clock::now();
-
-    // 소요된 시간 계산
-    std::chrono::duration<double> duration = end - start;
-
-    // 출력
-    std::cout.precision(10);
-    std::cout << "Execution time: " << duration.count() + 1 << " seconds" << std::endl;
-
-    // 함수 결과 반환
-    return result;
+double Timer::TimeCheck() 
+{
+    auto CurTime = std::chrono::high_resolution_clock::now();
+    auto sec = std::chrono::duration<double>(CurTime - PrevTime);
+    PrevTime = CurTime;
+    return sec.count();
 }
