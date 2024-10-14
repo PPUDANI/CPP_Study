@@ -15,7 +15,7 @@ int main()
         std::stack<double> double_stack;
         std::vector<double> double_vector;
 
-        std::cout << "Test Size : 50,000,000" << std::endl;
+        std::cout << "Test Size : 100,000,000" << std::endl;
         Timer::Getinstance()->StartTimer();
 
 
@@ -56,7 +56,19 @@ int main()
         //    vector pop : 1.65255 sec
         // --------------------------
 
-        // 결과는 std::vector가 4배 가까이 빠름.
+        //        [ RESULT ]
+        // --------------------------
+        //     Test Size : 100,000,000
+        // 
+        //    stack push : 47.5393 sec
+        //   vector push : 11.0904 sec
+        // 
+        //     stack pop : 16.6877 sec
+        //    vector pop : 6.27037 sec
+        // --------------------------
+        // 
+
+        // 삽입 결과는 std::vector가 4배 가까이 빠름.
     }
 
 
@@ -117,12 +129,27 @@ int main()
         //       vector pop : 1.67493 sec
         // -------------------------------
 
+        //        [ RESULT ]
+        // -------------------------------
+        //        Test Size : 100,000,000
+        // 
+        //   stack_vec push : 9.91611 sec
+        //      vector push : 7.65561 sec
+        // 
+        //    stack_vec pop : 6.74763 sec
+        //       vector pop : 6.42369 sec
+        // -------------------------------
+
+
         // Stack의 기본 컨테이너를 vector로 바꾼 결과 Stack의 성능을 크게 높일 수 있었음.
         // 그래도 Stack이 내부 컨테이너를 감싸고 있기 때문에 vector보다 조금 느릴 수 밖에 없음.
 
         // [ Stack이 deque를 쓰는 이유 ]
         // 추가적인 할당일 필요할때 기존 데이터를 옮기는 vector와 다르게
-        // deque는 여러 메모리 블록을 관리하기 때문에 큰 데이터에서 효율적임.
+        // deque는 여러 메모리 블록을 관리하기 때문에 큰 데이터에서 효율적이라고 함.
+
+        // 그런데 vector의 재할당으로 복사되는 시간으로 손해를 볼 줄 알았지만 1억번 push해도 차이는 그대로임.
+        // 메모리가 블럭단위로 분산되어있는 deque와 붙어있는 vector의 캐시적중률 차이로 보임.
     }
 }
 
