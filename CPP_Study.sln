@@ -98,6 +98,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cast", "Cast\Cast.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual", "Virtual\Virtual.vcxproj", "{079F8459-5E9F-4BBC-812F-9353372D5001}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Permutation", "Permutation\Permutation.vcxproj", "{67173572-8D45-42B0-A651-13CE976BA429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -330,6 +332,14 @@ Global
 		{079F8459-5E9F-4BBC-812F-9353372D5001}.Release|x64.Build.0 = Release|x64
 		{079F8459-5E9F-4BBC-812F-9353372D5001}.Release|x86.ActiveCfg = Release|Win32
 		{079F8459-5E9F-4BBC-812F-9353372D5001}.Release|x86.Build.0 = Release|Win32
+		{67173572-8D45-42B0-A651-13CE976BA429}.Debug|x64.ActiveCfg = Debug|x64
+		{67173572-8D45-42B0-A651-13CE976BA429}.Debug|x64.Build.0 = Debug|x64
+		{67173572-8D45-42B0-A651-13CE976BA429}.Debug|x86.ActiveCfg = Debug|Win32
+		{67173572-8D45-42B0-A651-13CE976BA429}.Debug|x86.Build.0 = Debug|Win32
+		{67173572-8D45-42B0-A651-13CE976BA429}.Release|x64.ActiveCfg = Release|x64
+		{67173572-8D45-42B0-A651-13CE976BA429}.Release|x64.Build.0 = Release|x64
+		{67173572-8D45-42B0-A651-13CE976BA429}.Release|x86.ActiveCfg = Release|Win32
+		{67173572-8D45-42B0-A651-13CE976BA429}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -377,6 +387,7 @@ Global
 		{71E142CA-2A04-409E-8483-8E0B823C4E3C} = {CE006557-797A-4384-ADBC-918D3859D8E8}
 		{5504AD6D-C1C2-4682-94AB-75C1FB5959FB} = {CE006557-797A-4384-ADBC-918D3859D8E8}
 		{079F8459-5E9F-4BBC-812F-9353372D5001} = {CE006557-797A-4384-ADBC-918D3859D8E8}
+		{67173572-8D45-42B0-A651-13CE976BA429} = {69E34DA7-398D-4970-90CD-195704B0F153}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35A4BB6D-BCD1-45C6-BBED-254D2768E3D2}
