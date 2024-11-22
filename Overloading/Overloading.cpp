@@ -17,7 +17,7 @@ void Val(int _Val)
 	std::cout << "Int Overloading!" << std::endl;
 }
 
-// ERROR! -> 입력받는 _Val는 const 유무에 상관 없이 복사가 되기 때문에 두 함수를 판단할 이유가 없어 ERROR가 발생함
+// ERROR! -> 입력받는 _Val는 const 유무에 상관 없이 복사가 되기 때문에 두 함수를 구분할 수 없어 ERROR가 발생함
 //void Val(const int _Val)
 //{
 //	std::cout << "Const Int Overloading!" << std::endl;
