@@ -3,49 +3,68 @@
 
 using namespace std;
 
-class Example 
+class Person 
 {
 public:
-    Example(const std::string& name) : name(name) {
+    Person(const std::string& name) : name(name) {
         std::cout << name << " 생성자 호출!" << std::endl;
     }
 
-    Example(const Example& other) : name(other.name) {
+    Person(const Person& other) : name(other.name) {
         std::cout << name << " 복사 생성자 호출!" << std::endl;
     }
 
-    Example(Example&& other) noexcept : name(std::move(other.name)) {
+    Person(Person&& other) noexcept : name(std::move(other.name)) {
         std::cout << name << " 이동 생성자 호출!" << std::endl;
+        other.name = "IsMoved";
     }
 
-    ~Example() {
+    ~Person() {
         std::cout << name << " 소멸자 호출!" << std::endl;
+    }
+
+
+
+    const string& GetName()
+    {
+        return name;
     }
 
 private:
     std::string name;
 };
 
-Example CreateExample() 
+// 두 함수 전부 RVO에 의해 "Temporary" 객체가 호출자의 메모리에 직접 생성됨
+Person CreateExample(const string& _Name)
 {
-    return Example("Temporary");  // RVO에 의해 "Temporary" 객체가 호출자의 메모리에 직접 생성됨
+    return Person(_Name);  
 }
-Example CreateExample2()
+Person CreateExample2(const string& _Name)
 {
-    Example Temp = Example("Temporary");
-    return Temp;  // RVO에 의해 "Temporary" 객체가 호출자의 메모리에 직접 생성됨
+    Person Temp = Person(_Name);
+    return Temp;  
 }
 
 int main() 
 {
-    cout << "CreateExample" << endl;
+    cout << "[ CreatePerson1 ]" << endl;
+    Person Person1 = CreateExample("Vi");
+    cout << endl;
 
-    Example example = CreateExample();
+    cout << "[ CreatePerson2 ]" << endl;
+    Person Person2 = CreateExample2("Powder");
+    cout << endl;
 
-    cout << "CreateExample2" << endl;
-    Example example2 = CreateExample2(); 
+    cout << "[ Person3 = move(Person2) ]" << endl;
+    Person Person3 = std::move(Person2); // <- move를 사용하면 이동생성자가 호출됨.
+    cout << endl;
+    Person3.GetName();
 
-    example = example2;
+    cout << "[ example4 = Person3 ]" << endl;
+    Person Person4 = Person3;
+    cout << endl;
+
+
 
     return 0;
 }

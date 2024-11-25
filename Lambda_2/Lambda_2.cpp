@@ -41,8 +41,6 @@ int main()
     // 함수객체 생성
     __lambda Lamb_1 = __lambda{ Val_1, Val_2 };
 
-
-
     // 3. mutable을 붙여주면 람다의 멤버 변수를 바꿀 수 있음.
     auto Mutable_Lambda = [=](int a) mutable
         {
