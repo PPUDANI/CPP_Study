@@ -1,42 +1,15 @@
 ﻿#include <iostream>
 #include <vector>
+
 using namespace std;
 
-class Actor;
-class Level
+long long Foo(long long n)
 {
-public:
-    template<typename ActorType>
-    ActorType* CreateActor(const std::string& _Name, int _Dir)
-    {
-        
-        ActorType* NewActor = new ActorType(_Name, _Dir);
-        Actors.push_back(NewActor);
-        return NewActor;
-        std::vector<Actor*> ActorGroup;
-    }
-
-private:
-    std::vector<Actor*> ActorGroup;
-};
-
-class Actor
-{
-public:
-    Actor(const string& _Name, int _Dir)
-        :Name(_Name), Direction(_Dir)
-    {
-
-    }
-
-private:
-    string Name;
-    int Direction;
-};
+    vector<int> A(10000);
+    return n + Foo(n - 1);
+}
 
 int main()
 {
-    Level* NewLevel = new Level();
-    Actor* Player = NewLevel->CreateActor<Actor>("Mario", 10);
-
+    long long Res = Foo(10000);
 }
