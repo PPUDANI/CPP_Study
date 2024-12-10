@@ -30,7 +30,7 @@ int main()
 
 	unique_ptr<A> pa_1(new A());
 	unique_ptr<A> pa_2(new A());
-	pa_1 = pa_2; // 삭제된 함수라고 오류가 뜸
+	// pa_1 = pa_2; 삭제된 함수라고 오류가 뜸
 
 	unique_ptr<A> pa_3(new A());
 	RefSet(pa_3, 3); // 참조로 받으면 unique_ptr을 사용하는 의미가 없음.
@@ -45,13 +45,11 @@ int main()
 
 	A* a2 = new A();
 	pa2.reset(a2); // 매우 위험한 코드임 a2의 외부 동작을 막지못함.
-	delete a2; // delete를 하게되면 double delete 문제가 발생하므로 하면안되는 짓. (오류나는거보니 막지는 못하는듯)
+	// delete a2; delete를 하게되면 double delete 문제가 발생하므로 하면안되는 짓. (오류나는거보니 막지는 못하는듯)
 
 	pa2.reset(new A()); // 쓸거면 이렇게 쓰거나 그냥 새로 만드는게 나음.
 	pa2.reset(nullptr); // 이렇게 소유 해제도 가능.
 	pa2.reset(); // nullptr이 기본 인자임. 
-
-	unique_ptr<A> pa3 = make_unique<A>();
 
 }
 
