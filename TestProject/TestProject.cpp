@@ -1,15 +1,13 @@
 ﻿#include <iostream>
 #include <vector>
-
+#include <functional>
+#include <memory>
 using namespace std;
-
-long long Foo(long long n)
-{
-    vector<int> A(10000);
-    return n + Foo(n - 1);
-}
 
 int main()
 {
-    long long Res = Foo(10000);
+	int a;
+	shared_ptr<int> sp = std::make_shared<int>(a);
+	weak_ptr<int> wp1(sp);
+	wp1.reset();
 }
