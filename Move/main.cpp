@@ -108,7 +108,7 @@ int main()
 
 	// Person5의 rvalue를 만들었음.
 	Person&& Person5_rvalue = std::move(Person5);
-	ㄴ
+	
 	// 하지만 아래 코드를 실행하면 복사 대입 연산자가 호출되는 것을 볼 수 있음.
 	Person4 = Person5_rvalue;
 
