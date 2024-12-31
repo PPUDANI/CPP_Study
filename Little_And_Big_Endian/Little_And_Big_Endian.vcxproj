@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{464ac37b-b87f-4879-b545-bf35c7d5fea5}</ProjectGuid>
-    <RootNamespace>DefaultClass</RootNamespace>
+    <ProjectGuid>{1da63b89-31c6-4afc-8250-eb1e2afc9a7c}</ProjectGuid>
+    <RootNamespace>LittleAndBigEndian</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DefaultClass.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DefaultClass.cpp" />
+    <ClCompile Include="Little_And_Big_Endian.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
