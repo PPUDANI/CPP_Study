@@ -58,8 +58,8 @@ int main()
 			Parent* Parent_ptr = new Parent();
 			Child* Child_ptr = new Child();
 
-			Parent* static_cast_Parent_ptr = static_cast<Parent*>(Child_ptr);
-			Child* static_cast_Child = static_cast<Child*>(Parent_ptr); // 다운 캐스팅 가능 (주의)
+			Parent* static_cast_Parent_ptr = static_cast<Parent*>(Child_ptr); // 업캐스팅 가능
+			Child* static_cast_Child_ptr = static_cast<Child*>(Parent_ptr); // 다운 캐스팅 가능 (주의)
 
 			Parent Parent_obj = Parent();
 			Child Child_obj = Child();
@@ -112,7 +112,7 @@ int main()
 			Vir_Parent* Parent_ptr = new Vir_Parent();
 			Vir_Child* Child_ptr = new Vir_Child();
 
-			Vir_Parent* static_cast_Parent_ptr = static_cast<Vir_Parent*>(Child_ptr); // 업 캐스팅 가능
+			Vir_Parent* static_cast_Parent_ptr = static_cast<Vir_Parent*>(Child_ptr); // 업캐스팅 가능
 			Vir_Child* static_cast_Child = static_cast<Vir_Child*>(Parent_ptr); // 다운 캐스팅 가능 (주의)
 		}
 
